@@ -60,7 +60,7 @@ tasks {
         val jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
         commandLine("${jdkHome}/bin/jpackage")
         args(listOf(
-                "-n", "fxBuildDemo",
+                "-n", "fourier-fx",
                 "-p", "$buildDir/modules"+File.pathSeparator+"$buildDir/libs",
                 "-d", "$buildDir/installer",
                 "-m", "${appModuleName}/${appClassName}"))
