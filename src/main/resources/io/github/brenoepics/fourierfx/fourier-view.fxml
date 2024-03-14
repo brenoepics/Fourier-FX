@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.github.brenoepics.fourierfx.ui.FourierController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <VBox alignment="TOP_CENTER" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+        <Canvas fx:id="canvas" height="256" width="2048.0"/>
+        <VBox alignment="TOP_CENTER" spacing="5.0">
+            <HBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Frequency"/>
+                <Slider fx:id="frequencyInput" blockIncrement="0.0001" max="-3" min="-4" value="-3.5">
+                    <cursor>
+                        <Cursor fx:constant="W_RESIZE"/>
+                    </cursor>
+                </Slider>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Order">
+                </Label>
+                <Slider fx:id="orderInput" blockIncrement="1" max="16" value="4">
+                    <cursor>
+                        <Cursor fx:constant="W_RESIZE"/>
+                    </cursor>
+                </Slider>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <HBox alignment="CENTER_LEFT">
+                    <Label alignment="CENTER" text="Waveform"/>
+                    <HBox fx:id="waveformContainer" alignment="CENTER_LEFT"/>
+                    <HBox alignment="CENTER_LEFT">
+                        <Button fx:id="increaseScaleButton">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <graphic>
+                                <SVGPath
+                                        content="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"
+                                        fill="#e6edf3"/>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="decreaseScaleButton">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets left="5.0"/>
+                            </HBox.margin>
+                            <graphic>
+                                <SVGPath
+                                        content="M0 7.75A.75.75 0 0 1 .75 7h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 7.75Z"
+                                        fill="#e6edf3"/>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                    <GridPane fx:id="debugGrid" hgap="10" vgap="10">
+                        <HBox.margin>
+                            <Insets left="10.0" top="-10.0"/>
+                        </HBox.margin>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0"/>
+                        </padding>
+                    </GridPane>
+                </HBox>
+            </HBox>
+            <HBox.margin>
+                <Insets top="10.0"/>
+            </HBox.margin>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0"/>
+            </padding>
+        </VBox>
+    </VBox>
+</AnchorPane>
