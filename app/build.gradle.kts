@@ -95,7 +95,7 @@ tasks {
             args += listOf(
                 "--linux-shortcut",
                 "--linux-package-name", "fourier-fx",
-                "--linux-rpm-license-type", "GPLv3",
+                "--linux-rpm-license-type", "MIT",
             )
         } else if (platform == "win") {
             args += listOf(
