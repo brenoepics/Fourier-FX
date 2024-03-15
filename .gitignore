@@ -5,3 +5,6 @@
 build
 .idea
 .DS_Store
+/.idea
+/app/out
+fourier-fx.iml

@@ -48,6 +48,11 @@ java {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "io.github.brenoepics.fourier.App"
+    }
+}
 
 tasks {
     task<Copy>("copyDependencies") {
@@ -60,7 +65,7 @@ tasks {
         val jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
         commandLine("${jdkHome}/bin/jpackage")
         args(listOf(
-                "-n", "fourier-fx",
+                "-n", "fourier",
                 "-p", "$buildDir/modules"+File.pathSeparator+"$buildDir/libs",
                 "-d", "$buildDir/installer",
                 "-m", "${appModuleName}/${appClassName}"))
