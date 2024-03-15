@@ -12,20 +12,27 @@ It allows users to select different waveforms and adjust the frequency and order
 
 ## Preview
 
-![preview](preview.png)
+![preview](https://github.com/brenoepics/Fourier-FX/assets/59066707/33a50bfd-992f-4a47-a03c-cf8bac189d30)
+
 
 ## Requirements
 
 - Java 21
 - JavaFX 21
-- Maven
+- Gradle 8.5
+
+## Pre compiled
+
+Download from [releases](https://github.com/brenoepics/Fourier-FX/releases)
+
+Install and open program fourier-fx.
 
 ## Building
 
 To build the project, use the following Maven command:
 
 ```bash
-mvn clean install
+gradlew package
 ```
 
 ## Running
@@ -33,7 +40,7 @@ mvn clean install
 To run the project, use the following Maven command:
 
 ```bash
-mvn javafx:run
+gradlew run
 ```
 
 ## Contributing
