@@ -12,8 +12,11 @@ It allows users to select different waveforms and adjust the frequency and order
 
 ## Preview
 
-![preview](https://github.com/brenoepics/Fourier-FX/assets/59066707/33a50bfd-992f-4a47-a03c-cf8bac189d30)
+> [!NOTE] 
+> Using JPro, I could transform the Java canvas to Javascript that runs online but may be down or unstable.
+> Check here the [Fourier Preview](https://fourier.breno.tech/)
 
+![preview](https://github.com/brenoepics/Fourier-FX/assets/59066707/33a50bfd-992f-4a47-a03c-cf8bac189d30)
 
 ## Requirements
 
