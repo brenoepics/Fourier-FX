@@ -1,14 +1,16 @@
 # FourierFX
 
-FourierFX is a [JavaFX](https://openjfx.io/) application that visualizes [Fourier series](https://math.mit.edu/~gs/cse/websections/cse41.pdf).
+**▶ Live demo: [brenoepics.github.io/Fourier-FX](https://brenoepics.github.io/Fourier-FX/)** — Java running in your browser via WebAssembly.
+
+FourierFX is a [Fourier series](https://math.mit.edu/~gs/cse/websections/cse41.pdf) visualizer written in Java. It runs two ways from the same codebase:
+
+- **In the browser** — the Java core is compiled to WebAssembly (wasm-gc) with [TeaVM](https://teavm.org/) and rendered on an HTML5 canvas. No plugins, no server, ~85 KB total.
+- **On the desktop** — as a native [JavaFX](https://openjfx.io/) application.
+
 It allows users to select different waveforms and adjust the frequency and order of the Fourier series.
 
-It also runs in the browser: the same Java core is compiled to [WebAssembly](https://webassembly.org/) with [TeaVM](https://teavm.org/).
-
-## Try it online
-
-▶ **[brenoepics.github.io/Fourier-FX](https://brenoepics.github.io/Fourier-FX/)** — Java compiled to WebAssembly, no plugins needed
-(requires a browser with WebAssembly GC: Chrome 119+, Firefox 121+, Safari 18.4+).
+> [!NOTE]
+> The web version requires a browser with WebAssembly GC support: Chrome 119+, Firefox 121+, or Safari 18.4+.
 
 ## Features
 
@@ -16,7 +18,7 @@ It also runs in the browser: the same Java core is compiled to [WebAssembly](htt
 - Adjustable frequency and order of the Fourier series
 - Scale adjustment
 - Debug mode to visualize the individual terms of the Fourier series
-- Runs as a native desktop app (JavaFX) and in the browser (WebAssembly)
+- Same Java engine everywhere: JavaFX on desktop, WebAssembly on the web
 
 ## Preview
 
@@ -70,7 +72,7 @@ Web app (serve the bundle with any static file server):
 ./gradlew :web:webDist && python3 -m http.server 8123 -d web/build/dist
 ```
 
-The web app is deployed to GitHub Pages automatically on every push to `main`.
+The web app is deployed to [GitHub Pages](https://brenoepics.github.io/Fourier-FX/) automatically on every push to `main`.
 
 ## Contributing
 
