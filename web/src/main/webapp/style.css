@@ -1,0 +1,154 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  color: rgb(230, 237, 243);
+  background-color: #0d1117;
+}
+
+main {
+  max-width: 2048px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background-color: #0d1117;
+}
+
+#loading,
+#error {
+  margin-top: 12px;
+  color: #8b949e;
+}
+
+#error {
+  color: #f85149;
+}
+
+#controls {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+label,
+.row-label {
+  min-width: 80px;
+}
+
+input[type="range"] {
+  width: 260px;
+  accent-color: #0969da;
+  cursor: ew-resize;
+}
+
+.waveforms {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip:hover {
+  background-color: rgb(48, 54, 61);
+  border-color: rgb(110, 118, 129);
+}
+
+.chip input {
+  accent-color: #0969da;
+  cursor: pointer;
+  margin: 0;
+}
+
+.scale-buttons {
+  display: inline-flex;
+  gap: 5px;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 30px;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(48, 54, 61);
+  border-color: rgb(110, 118, 129);
+}
+
+button:active {
+  background-color: rgb(40, 46, 51);
+  border-color: #6e7681;
+}
+
+.debug {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #8b949e;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 16px;
+  color: #8b949e;
+  font-size: 12px;
+}
+
+footer a {
+  color: #2f81f7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

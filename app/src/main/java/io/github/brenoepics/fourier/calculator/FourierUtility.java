@@ -1,5 +1,7 @@
 package io.github.brenoepics.fourier.calculator;
 
+import io.github.brenoepics.fourier.core.FourierDefaults;
+import io.github.brenoepics.fourier.core.WaveForm;
 import io.github.brenoepics.fourier.ui.FourierAnimation;
 import io.github.brenoepics.fourier.ui.FourierColors;
 import java.util.ArrayList;
@@ -18,13 +20,8 @@ public class FourierUtility {
     throw new IllegalStateException("Utility class");
   }
 
-  public static final WaveForm DEFAULT_WAVEFORM = WaveForm.SQUARE;
-  public static final double DEFAULT_SCALE = 64.0;
-  public static final double DEFAULT_FREQUENCY = -3.5;
-  public static final int DEFAULT_ORDER = 4;
-
   public static WaveForm getWaveForm(String text) {
-    return WaveForm.fromString(text).orElse(DEFAULT_WAVEFORM);
+    return WaveForm.fromString(text).orElse(FourierDefaults.WAVEFORM);
   }
 
   public static void addFrequencyListener(
@@ -124,10 +121,10 @@ public class FourierUtility {
 
     return new CalculatorBuilder()
         .setContext(context)
-        .setScale(DEFAULT_SCALE)
-        .setWaveForm(DEFAULT_WAVEFORM)
-        .setOrder(DEFAULT_ORDER)
-        .setFrequency(DEFAULT_FREQUENCY)
+        .setScale(FourierDefaults.SCALE)
+        .setWaveForm(FourierDefaults.WAVEFORM)
+        .setOrder(FourierDefaults.ORDER)
+        .setFrequency(FourierDefaults.FREQUENCY)
         .setColors(new FourierColors())
         .setDebugGrid(debugGrid)
         .build();
@@ -145,7 +142,8 @@ public class FourierUtility {
         label.setText("Scale: " + calculator.getScale());
         break;
       case "pair":
-        label.setText("Pair: " + calculator.getCords().getKey() + ", " + calculator.getCords().getValue());
+        label.setText(
+            "Pair: " + calculator.getCords().getKey() + ", " + calculator.getCords().getValue());
         break;
       default:
         label.setText("Unknown");

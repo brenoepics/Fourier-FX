@@ -1,7 +1,7 @@
 module io.github.brenoepics.fourier {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires io.github.brenoepics.fourier.core;
 
     opens io.github.brenoepics.fourier to javafx.fxml;
     exports io.github.brenoepics.fourier;

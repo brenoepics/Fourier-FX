@@ -1,5 +1,7 @@
 package io.github.brenoepics.fourier.calculator;
 
+import io.github.brenoepics.fourier.core.FourierSeries;
+import io.github.brenoepics.fourier.core.WaveForm;
 import io.github.brenoepics.fourier.ui.FourierColors;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.GridPane;
@@ -49,6 +51,7 @@ public class CalculatorBuilder {
   }
 
   public FourierCalculator build() {
-    return new FourierCalculator(context, scale, waveForm, order, frequency, colors, debugGrid);
+    FourierSeries series = new FourierSeries(scale, waveForm, order, frequency);
+    return new FourierCalculator(context, series, colors, debugGrid);
   }
 }

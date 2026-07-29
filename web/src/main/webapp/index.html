@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fourier Series</title>
+  <meta name="description" content="Fourier series visualizer — Java compiled to WebAssembly">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Fourier Series</h1>
+    <canvas id="canvas" width="2048" height="256"></canvas>
+
+    <div id="loading">Loading WebAssembly&hellip;</div>
+    <div id="error" hidden>
+      Failed to load the WebAssembly module. Your browser needs WebAssembly GC support
+      (Chrome 119+, Firefox 121+, Safari 18.4+).
+    </div>
+
+    <div id="controls" hidden>
+      <div class="row">
+        <label for="frequencyInput">Frequency</label>
+        <input type="range" id="frequencyInput" min="-4" max="-3" step="0.0001" value="-3.5">
+      </div>
+      <div class="row">
+        <label for="orderInput">Order</label>
+        <input type="range" id="orderInput" min="0" max="16" step="1" value="4">
+      </div>
+      <div class="row">
+        <span class="row-label">Waveform</span>
+        <span class="waveforms">
+          <label class="chip"><input type="radio" name="waveform" id="wf-Square" value="Square" checked> Square</label>
+          <label class="chip"><input type="radio" name="waveform" id="wf-Sine" value="Sine"> Sine</label>
+          <label class="chip"><input type="radio" name="waveform" id="wf-Sawtooth" value="Sawtooth"> Sawtooth</label>
+          <label class="chip"><input type="radio" name="waveform" id="wf-Triangle" value="Triangle"> Triangle</label>
+        </span>
+        <span class="scale-buttons">
+          <button id="increaseScaleButton" title="Increase scale" aria-label="Increase scale">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="#e6edf3" d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"/></svg>
+          </button>
+          <button id="decreaseScaleButton" title="Decrease scale" aria-label="Decrease scale">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="#e6edf3" d="M0 7.75A.75.75 0 0 1 .75 7h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 7.75Z"/></svg>
+          </button>
+        </span>
+        <span class="debug">
+          <span id="frequency"></span>
+          <span id="order"></span>
+          <span id="scale"></span>
+          <span id="pair"></span>
+        </span>
+      </div>
+    </div>
+
+    <footer>
+      Java compiled to WebAssembly with TeaVM &middot;
+      <a href="https://github.com/brenoepics/Fourier-FX">brenoepics/Fourier-FX</a>
+    </footer>
+  </main>
+
+  <script src="wasm-gc/fourier.wasm-runtime.js"></script>
+  <script>
+    TeaVM.wasmGC.load("wasm-gc/fourier.wasm")
+      .then(function (teavm) {
+        document.getElementById("loading").hidden = true;
+        document.getElementById("controls").hidden = false;
+        teavm.exports.main([]);
+      })
+      .catch(function (err) {
+        console.error(err);
+        document.getElementById("loading").hidden = true;
+        document.getElementById("error").hidden = false;
+      });
+  </script>
+</body>
+</html>

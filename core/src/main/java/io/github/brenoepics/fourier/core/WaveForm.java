@@ -1,4 +1,4 @@
-package io.github.brenoepics.fourier.calculator;
+package io.github.brenoepics.fourier.core;
 
 import java.util.Optional;
 
