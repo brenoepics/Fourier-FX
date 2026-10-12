@@ -2,7 +2,7 @@ import org.teavm.gradle.api.OptimizationLevel
 
 plugins {
     java
-    id("org.teavm") version "0.15.0"
+    id("org.teavm") version "0.16.0"
 }
 
 group = "io.github.brenoepics"
